@@ -94,7 +94,7 @@ public class Task1 implements Task {
      */
     private void write(File file, String text) throws IOException {
 
-        OutputStream output = new FileOutputStream(file);
+        OutputStream output = new FileOutputStream(file, false);
 
         output.write(text.getBytes());
 
