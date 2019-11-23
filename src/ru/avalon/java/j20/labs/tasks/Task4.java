@@ -17,6 +17,7 @@ public class Task4 implements Task {
      */
     @Override
     public void run() throws IOException {
+
         Properties properties = read("resources/database");
 
         /*
@@ -36,6 +37,9 @@ public class Task4 implements Task {
      * @return новый экземпляр типа {@link Properties}
      */
     private Properties read(String path) {
+
+
+
         throw new UnsupportedOperationException("Not implement yet!");
     }
 }
