@@ -62,7 +62,11 @@ public class Country {
          * TODO(Студент): Реализовать метод valueOf класса Country
          */
 
-        String[] countrySplit = text.split(":",2);
+        String div = " ";
+        if(text.contains(":")) div = ":";
+        if(text.contains("=")) div = "=";
+
+        String[] countrySplit = text.split(div,2);
 
         return new Country(countrySplit[0], countrySplit[1])    ;
 
