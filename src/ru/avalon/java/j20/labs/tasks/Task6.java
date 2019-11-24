@@ -26,8 +26,6 @@ public class Task6 implements Task {
     public void run() throws IOException, ParseException {
         File input = new File("assets/countries.txt");
         Collection<Country> countries = read(input);
-        System.out.println("");
-
 
         /*
          * TODO(Студент): Выполнить задание №6

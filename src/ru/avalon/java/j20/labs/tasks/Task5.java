@@ -32,13 +32,10 @@ public class Task5 implements Task {
          * 4. С использованием отладчика сравнить полученные ресурсы и
          *    проверить корректность работы программы.
          */
-//        Locale.setDefault(new Locale("en", "US"));
-        ResourceBundle resDef = read("resources/strings/titles");
-        ResourceBundle resLoc = read("resources/strings/titles", new Locale ("en"));
 
-
-        System.out.println(resDef.getString("menu.edit"));
-        System.out.println(resLoc.getString("menu.edit"));
+        Locale.setDefault(new Locale("en"));
+        ResourceBundle resourceDef = read("resources/strings/titles");
+        ResourceBundle resourceNewLoc = read("resources/strings/titles", new Locale ("ru"));
 
     }
 
