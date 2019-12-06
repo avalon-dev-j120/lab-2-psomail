@@ -1,3 +1,4 @@
+
 package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
@@ -31,6 +32,14 @@ public class Task5 implements Task {
          * 4. С использованием отладчика сравнить полученные ресурсы и
          *    проверить корректность работы программы.
          */
+
+        Locale.setDefault(new Locale("en"));
+        ResourceBundle resourceDef = read("resources/strings/titles");
+        ResourceBundle resourceNewLoc = read("resources/strings/titles", new Locale ("ru"));
+
+        System.out.println(resourceDef.getString("menu.help.about"));
+        System.out.println(resourceNewLoc.getString("menu.help.about"));
+
     }
 
     /**
@@ -41,7 +50,9 @@ public class Task5 implements Task {
      * @return новый экземпляр типа {@link ResourceBundle}
      */
     private ResourceBundle read(String path) {
-        throw new UnsupportedOperationException("Not implement yet!");
+
+        return ResourceBundle.getBundle(path);
+
     }
 
     /**
@@ -51,6 +62,6 @@ public class Task5 implements Task {
      * @return новый экземпляр типа {@link ResourceBundle}
      */
     private ResourceBundle read(String path, Locale locale) {
-        throw new UnsupportedOperationException("Not implement yet!");
+        return ResourceBundle.getBundle(path, locale);
     }
 }

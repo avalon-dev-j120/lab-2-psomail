@@ -2,7 +2,7 @@ package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 /**
@@ -17,7 +17,11 @@ public class Task4 implements Task {
      */
     @Override
     public void run() throws IOException {
-        Properties properties = read("resources/database");
+
+        Properties properties = read("src/resources/database.properties");
+
+        System.out.println(properties.getProperty("db.sql.server.url"));
+
 
         /*
          * TODO(Студент): Выполнить задание №4
@@ -36,6 +40,21 @@ public class Task4 implements Task {
      * @return новый экземпляр типа {@link Properties}
      */
     private Properties read(String path) {
-        throw new UnsupportedOperationException("Not implement yet!");
+
+        try {
+            Properties properties = new Properties();
+
+            try(FileReader reader = new FileReader(new File(path))){
+                properties.load(reader);
+                return properties;
+            }
+        }
+
+        catch (IOException e) {
+
+            System.out.println("Error! File not found!");
+        }
+
+        return null;
     }
 }
