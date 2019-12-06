@@ -27,6 +27,8 @@ public class Task6 implements Task {
         File input = new File("assets/countries.txt");
         Collection<Country> countries = read(input);
 
+        for(Country iter: countries) System.out.println(iter.getCode() + "=" + iter.getName());
+
         /*
          * TODO(Студент): Выполнить задание №6
          *

@@ -20,6 +20,8 @@ public class Task4 implements Task {
 
         Properties properties = read("src/resources/database.properties");
 
+        System.out.println(properties.getProperty("db.sql.server.url"));
+
 
         /*
          * TODO(Студент): Выполнить задание №4

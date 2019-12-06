@@ -37,6 +37,9 @@ public class Task5 implements Task {
         ResourceBundle resourceDef = read("resources/strings/titles");
         ResourceBundle resourceNewLoc = read("resources/strings/titles", new Locale ("ru"));
 
+        System.out.println(resourceDef.getString("menu.help.about"));
+        System.out.println(resourceNewLoc.getString("menu.help.about"));
+
     }
 
     /**
